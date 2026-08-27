@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selinne Carlin | Portfolio</title>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Iconos Feather -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Outfit", sans-serif;
+      background: url('f.gif') center/cover no-repeat fixed;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: flex-start;
+      padding-top: 3rem;
+      animation: fadeSlide 1.2s ease forwards;
+    }
+
+    @keyframes fadeSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid #ccc;
+      backdrop-filter: blur(5px);
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #222;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav button:hover {
+      color: #666;
+    }
+
+    nav button.active::before {
+      content: "> ";
+      color: #0f0;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      padding: 2rem;
+      max-width: 700px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(2px);
+      border-radius: 12px;
+      text-align: left;
+      display: none;
+    }
+
+    .card.active {
+      display: block;
+    }
+
+    h1,
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Iconos About Me */
+    .icons a {
+      color: #222;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+    }
+
+    .icons a:hover {
+      color: #0f0;
+      text-shadow: 0 0 8px #0f0;
+    }
+
+    /* Hover neon por sección */
+    #projects a:hover {
+      color: #00f;
+      text-shadow: 0 0 8px #00f;
+    }
+
+    #skills span:hover {
+      color: #ff0;
+      text-shadow: 0 0 8px #ff0;
+    }
+
+    #certifications li:hover {
+      color: #f00;
+      text-shadow: 0 0 8px #f00;
+    }
+
+    /* Efecto máquina de escribir en el nombre */
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #0f0;
+      animation: typing 2s steps(20), blink 0.7s infinite step-end alternate;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* Glitch hover */
+    @keyframes glitch {
+      0% {
+        transform: translate(0);
+      }
+
+      20% {
+        transform: translate(-2px, 2px);
+      }
+
+      40% {
+        transform: translate(-2px, -2px);
+      }
+
+      60% {
+        transform: translate(2px, 2px);
+      }
+
+      80% {
+        transform: translate(2px, -2px);
+      }
+
+      100% {
+        transform: translate(0);
+      }
+    }
+
+    nav button:hover,
+    .icons a:hover,
+    a:hover {
+      animation: glitch 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <button data-section="about" class="active">About Me</button>
+    <button data-section="projects">Projects</button>
+    <button data-section="skills">Skills</button>
+    <button data-section="certifications">Certifications</button>
+  </nav>
+
+  <!-- About Me -->
+  <div id="about" class="card active">
+    <h1 class="typewriter">Selinne Carlin</h1>
+    <div class="icons">
+      <a href="mailto:selin199116@gmail.com" target="_blank"><i data-feather="mail"></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i data-feather="linkedin"></i></a>
+      <a href="https://github.com/41R3" target="_blank"><i data-feather="github"></i></a>
+    </div>
+    <p><strong>Profile:</strong> Computer Science student from Peru, passionate about cybersecurity, DevOps, and
+      bio-inspired systems, seeking international opportunities with willingness to relocate and grow in innovative
+      projects.</p>
+  </div>
+
+  <!-- Projects -->
+  <div id="projects" class="card">
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://github.com/41R3/rusty-malgen" target="_blank">rusty-malgen</a> – Adaptive malware using
+        genetic algorithms in Rust.</li>
+      <li><a href="https://github.com/41R3/malware-dna-scan" target="_blank">malware-dna-scan</a> – Bio-inspired malware
+        analysis using genetic sequences in Python.</li>
+      <li><a href="https://github.com/41R3/secure-devsecops-pipeline" target="_blank">secure-devsecops-pipeline</a> –
+        CI/CD pipeline with OWASP ZAP scanning and CIS hardening.</li>
+      <li><a href="https://github.com/41R3/autohealing-infra-terraform-ansible"
+          target="_blank">autohealing-infra-terraform-ansible</a> – Self-healing infrastructure with Terraform and
+        Ansible.</li>
+    </ul>
+    <p><em>Currently working on more projects...</em></p>
+  </div>
+
+  <!-- Skills -->
+  <div id="skills" class="card">
+    <h2>Skills / Technologies</h2>
+    <p>
+      <span>C++</span>, <span>Python</span>, <span>JavaScript</span>, <span>R</span>,
+      <span>MongoDB</span>, <span>PostgreSQL</span>, <span>Node.js</span>, <span>React</span>,
+      <span>Kali Linux</span>, <span>Go</span>, <span>Rust</span>
+    </p>
+  </div>
+
+  <!-- Certifications -->
+  <div id="certifications" class="card">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Certified Ethical Hacker (CEH) – Cisco Networking Academy (Oct 2024)</li>
+      <li>Python Essentials 2 – Cisco (May 2025)</li>
+      <li>JavaScript Essentials 2 – Cisco (Jun 2025)</li>
+      <li>Networking Basics – Cisco (Jun 2025)</li>
+    </ul>
+  </div>
+
+  <script>
+    feather.replace();
+
+    const buttons = document.querySelectorAll('nav button');
+    const cards = document.querySelectorAll('.card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        cards.forEach(card => card.classList.remove('active'));
+        document.getElementById(btn.dataset.section).classList.add('active');
+      });
+    });
+
+    // Easter egg
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+        alert("Access Granted – Welcome, Selinne");
+      }
+    });
+  </script>
+
+  <!-(solo dashboard) -->
+  <script src="https://cdn.counter.dev/script.js" data-id="014b4487-133d-465a-937e-c7ca3354756e"
+    data-utcoffset="-5"></script>
+</body>
+
+</html>
